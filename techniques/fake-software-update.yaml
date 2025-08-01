@@ -1,7 +1,7 @@
 id: fake-software-update
 title: Fake Software Update Popup
 description: Malicious websites or ads display fake update notifications to trick users into downloading malware.
-difficulty: easy
+severity: low
 category: web-scam
 tags:
   - Windows

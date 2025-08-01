@@ -21,7 +21,7 @@ async function createTechnique() {
     const id = await question('Enter technique ID (e.g., fake-support-call): ');
     const title = await question('Enter technique title: ');
     const description = await question('Enter technique description: ');
-    const difficulty = await question('Enter difficulty (easy/medium/hard): ');
+    const severity = await question('Enter severity (low/medium/high): ');
     const category = await question('Enter category (phone-scam/email-scam/web-scam): ');
     
     console.log('\nEnter tags (press Enter twice when done):');
@@ -61,7 +61,7 @@ async function createTechnique() {
     const yamlContent = `id: ${id}
 title: ${title}
 description: ${description}
-difficulty: ${difficulty}
+    severity: ${severity}
 category: ${category}
 tags:
 ${tags.map(tag => `  - ${tag}`).join('\n')}

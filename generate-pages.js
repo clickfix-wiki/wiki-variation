@@ -57,8 +57,8 @@ function generateTechniquePage(technique) {
     // Replace placeholders
     template = template.replace(/{{TITLE}}/g, technique.title);
     template = template.replace(/{{DESCRIPTION}}/g, technique.description);
-    template = template.replace(/{{DIFFICULTY}}/g, technique.difficulty);
-    template = template.replace(/{{DIFFICULTY_UPPER}}/g, technique.difficulty.toUpperCase());
+            template = template.replace(/{{SEVERITY}}/g, technique.severity);
+        template = template.replace(/{{SEVERITY_UPPER}}/g, technique.severity.toUpperCase());
     template = template.replace(/{{CATEGORY}}/g, technique.category);
     
     // Generate tags HTML

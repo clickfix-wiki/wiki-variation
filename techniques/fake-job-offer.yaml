@@ -1,7 +1,7 @@
 id: fake-job-offer
 title: Fake Job Offer Scam
 description: Scammers pose as recruiters offering fake job opportunities to steal personal information or money.
-difficulty: medium
+severity: medium
 category: email-scam
 tags:
   - Windows

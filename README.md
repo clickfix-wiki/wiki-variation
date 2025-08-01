@@ -10,7 +10,7 @@ ClickFix refers to social engineering techniques where scammers trick victims in
 - **Searchable Database**: Find techniques by title, description, or IoCFs
 - **Tag-based Filtering**: Filter by OS, capabilities, and other categories
 - **Comprehensive IoCFs**: Each technique includes detailed indicators of compromise
-- **Difficulty Ratings**: Techniques are categorized by difficulty level
+- **Severity Ratings**: Techniques are categorized by severity level
 - **Prevention Tips**: Each technique includes prevention strategies
 - **GitHub Pages Compatible**: Simple HTML/CSS/JS implementation
 
@@ -45,7 +45,7 @@ Each technique is stored in its own YAML file with the following structure:
 id: unique-technique-id
 title: Technique Name
 description: Brief description of the technique
-difficulty: easy|medium|hard
+severity: low|medium|high
 category: category-name
 tags:
   - Windows
@@ -142,11 +142,11 @@ The HTML pages will be generated automatically during the GitHub Actions build p
 - **File Attachment**: Techniques involving file attachments
 - **Phone Call**: Techniques involving phone calls
 
-## Difficulty Levels
+## Severity Levels
 
-- **Easy**: Basic social engineering techniques
+- **Low**: Basic social engineering techniques
 - **Medium**: More sophisticated techniques requiring some technical knowledge
-- **Hard**: Advanced techniques requiring significant technical expertise
+- **High**: Advanced techniques requiring significant technical expertise
 
 ## License
 

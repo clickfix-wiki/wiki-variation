@@ -1,7 +1,7 @@
 id: fake-antivirus-scan
 title: Fake Antivirus Scan Results
 description: Scammers create fake antivirus interfaces showing false threats to trick users into paying for "removal".
-difficulty: medium
+severity: medium
 category: web-scam
 tags:
   - Windows

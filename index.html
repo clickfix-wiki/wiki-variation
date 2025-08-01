@@ -104,7 +104,7 @@
             flex-wrap: wrap;
         }
 
-        .difficulty {
+        .severity {
             display: inline-block;
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
@@ -113,9 +113,9 @@
             margin-top: 0.5rem;
         }
 
-        .difficulty.easy { background: #d4edda; color: #155724; }
-        .difficulty.medium { background: #fff3cd; color: #856404; }
-        .difficulty.hard { background: #f8d7da; color: #721c24; }
+        .severity.low { background: #d4edda; color: #155724; }
+        .severity.medium { background: #fff3cd; color: #856404; }
+        .severity.high { background: #f8d7da; color: #721c24; }
 
         .no-results {
             text-align: center;
@@ -446,7 +446,7 @@
                         'Claims about "viruses" or "security threats"',
                         'Asking for payment via gift cards or cryptocurrency'
                     ],
-                    difficulty: 'medium',
+                    severity: 'medium',
                     tags: ['Windows', 'Mac', 'Linux', 'GUI', 'CLI', 'Remote Access', 'Phone Call']
                 },
                 {
@@ -460,7 +460,7 @@
                         'Poor grammar or spelling in emails',
                         'Suspicious sender addresses'
                     ],
-                    difficulty: 'easy',
+                    severity: 'easy',
                     tags: ['Windows', 'Mac', 'Linux', 'GUI', 'CLI', 'Email', 'File Attachment', 'Run Command']
                 }
             ];
@@ -551,7 +551,7 @@
                     <a href="pages/${technique.id}.html" class="technique-item" data-id="${technique.id}">
                         <div class="technique-title">${technique.title}</div>
                         <div class="technique-meta">
-                            <span class="difficulty ${technique.difficulty}">${technique.difficulty.toUpperCase()}</span>
+                            <span class="severity ${technique.severity}">${technique.severity.toUpperCase()}</span>
                             ${technique.tags ? technique.tags.map(tag => `<span class="technique-tag">${tag}</span>`).join('') : ''}
                         </div>
                     </a>

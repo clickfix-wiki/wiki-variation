@@ -4,7 +4,7 @@
 id: unique-technique-id
 title: Technique Name
 description: Brief description of the technique and how it works
-difficulty: easy|medium|hard
+severity: low|medium|high
 category: phone-scam|email-scam|web-scam
 
 # Tags - Choose from the available categories below
@@ -93,7 +93,7 @@ prevention:
 # id: fake-support-call
 # title: Fake Technical Support Call
 # description: Scammer pretends to be from Microsoft, Apple, or other tech companies offering "urgent" technical support.
-# difficulty: medium
+# severity: medium
 # category: phone-scam
 # tags:
 #   - Windows

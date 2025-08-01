@@ -1,7 +1,7 @@
 id: fake-prize-notification
 title: Fake Prize or Lottery Notification
 description: Scammers claim the victim has won a prize or lottery and need to provide personal information or pay fees.
-difficulty: easy
+severity: low
 category: email-scam
 tags:
   - Windows

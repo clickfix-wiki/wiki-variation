@@ -1,7 +1,7 @@
 id: fake-support-call
 title: Fake Technical Support Call
 description: Scammer pretends to be from Microsoft, Apple, or other tech companies offering "urgent" technical support.
-difficulty: medium
+severity: medium
 category: phone-scam
 tags:
   - Windows

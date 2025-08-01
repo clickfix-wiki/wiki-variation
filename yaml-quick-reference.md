@@ -5,7 +5,7 @@
 id: unique-technique-id
 title: Technique Name
 description: Brief description
-difficulty: easy|medium|hard
+severity: low|medium|high
 category: phone-scam|email-scam|web-scam
 tags: [list of tags]
 iocfs: [list of indicators]
@@ -46,7 +46,7 @@ prevention: [list of prevention tips]
 id: fake-support-call
 title: Fake Technical Support Call
 description: Scammer pretends to be from tech companies offering urgent support.
-difficulty: medium
+severity: medium
 category: phone-scam
 tags:
   - Windows

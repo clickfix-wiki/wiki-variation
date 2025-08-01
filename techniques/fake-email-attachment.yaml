@@ -1,7 +1,7 @@
 id: fake-email-attachment
 title: Fake Email with Malicious Attachment
 description: Scammer sends emails with fake invoices, receipts, or documents containing malicious payloads.
-difficulty: easy
+severity: low
 category: email-scam
 tags:
   - Windows
