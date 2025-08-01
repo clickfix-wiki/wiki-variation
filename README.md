@@ -1,5 +1,4 @@
 # ClickFix Techniques
-
 A comprehensive database of social engineering pretenses and Indicators of ClickFix (IoCF) to help identify and prevent social engineering attacks.
 
 ## What is ClickFix?
