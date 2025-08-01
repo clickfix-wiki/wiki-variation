@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickFix Techniques - Social Engineering Pretenses</title>
+    <title>ClickFix Wiki</title>
     <style>
         * {
             margin: 0;
@@ -276,18 +276,18 @@
 <body>
     <div class="header">
         <div class="container">
-            <h1>ClickFix Techniques</h1>
-            <p>Social Engineering Pretenses and Indicators of ClickFix (IoCF)</p>
+            <h1>ClickFix Wiki</h1>
+            <p>Code execution by social engineering instructions</p>
         </div>
     </div>
 
     <div class="container">
         <div class="search-section">
-            <input type="text" class="search-box" id="searchBox" placeholder="Search techniques, descriptions, or IoCFs...">
+            <input type="text" class="search-box" id="searchBox" placeholder="Search">
         </div>
 
         <div class="filter-section">
-            <div class="filter-title">Filter by Tags</div>
+            <div class="filter-title">Filter:</div>
             
             <div class="filter-groups">
                 <div class="filter-group">
@@ -305,7 +305,7 @@
                 </div>
 
                 <div class="filter-group">
-                    <div class="filter-group-title">Other</div>
+                    <div class="filter-group-title">Tags</div>
                     <div class="filter-tags" id="otherTags">
                         <!-- Other tags will be populated here -->
                     </div>
@@ -315,10 +315,7 @@
             <button class="clear-filters" id="clearFilters">Clear All Filters</button>
         </div>
 
-        <div class="stats">
-            <span id="totalTechniques">0</span> techniques documented • 
-            <span id="visibleTechniques">0</span> currently visible
-        </div>
+        
 
         <div class="loading" id="loading">
             <div class="spinner"></div>
@@ -388,8 +385,8 @@
         // Tag categories
         const tagCategories = {
             os: ['Windows', 'Mac', 'Linux'],
-            capabilities: ['GUI', 'CLI', 'Run Command', 'Open File Explorer', 'Clear Mark of The Web', 'UAC', 'Remote Access', 'Download', 'Popup', 'Payment', 'Personal Information', 'Document Request', 'Fake Alert'],
-            other: ['Email', 'Web Browser', 'File Attachment', 'Phone Call']
+            capabilities: ['Run Command', 'Open File Explorer', 'Clear Mark of The Web', 'UAC'],
+            other: ['GUI', 'CLI']
         };
 
         // Selected filters
@@ -672,8 +669,8 @@
             }
 
             // Update stats
-            document.getElementById('totalTechniques').textContent = window.allTechniques ? window.allTechniques.length : 0;
-            document.getElementById('visibleTechniques').textContent = techniquesToRender.length;
+            // document.getElementById('totalTechniques').textContent = window.allTechniques ? window.allTechniques.length : 0;
+            // document.getElementById('visibleTechniques').textContent = techniquesToRender.length;
         }
 
         // Search and filter functionality
