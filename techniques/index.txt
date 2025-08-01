@@ -4,3 +4,4 @@ fake-job-offer.yaml
 fake-prize-notification.yaml
 fake-software-update.yaml
 fake-support-call.yaml
+fake-system-alert.yaml
