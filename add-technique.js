@@ -78,6 +78,26 @@ ${prevention.map(tip => `  - ${tip}`).join('\n')}
     fs.writeFileSync(filename, yamlContent);
     
     console.log(`\n✅ Technique created: ${filename}`);
+    
+    // Update the index file
+    try {
+        const indexPath = 'techniques/index.txt';
+        let indexContent = '';
+        if (fs.existsSync(indexPath)) {
+            indexContent = fs.readFileSync(indexPath, 'utf8');
+        }
+        
+        // Add the new file to the index if it's not already there
+        const newFilename = `${id}.yaml`;
+        if (!indexContent.includes(newFilename)) {
+            indexContent += (indexContent ? '\n' : '') + newFilename;
+            fs.writeFileSync(indexPath, indexContent);
+            console.log('✅ Updated techniques/index.txt');
+        }
+    } catch (error) {
+        console.log('⚠️  Warning: Could not update index file automatically.');
+    }
+    
     console.log('\nGenerating updated pages...');
     
     // Generate updated pages

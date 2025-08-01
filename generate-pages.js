@@ -115,6 +115,16 @@ function generateAllPages() {
         console.log(`Generated: ${pageName}`);
     });
     
+    // Update the index file
+    try {
+        const indexPath = path.join(techniquesDir, 'index.txt');
+        const indexContent = files.join('\n');
+        fs.writeFileSync(indexPath, indexContent);
+        console.log('Updated techniques/index.txt');
+    } catch (error) {
+        console.warn('Could not update index file:', error.message);
+    }
+    
     console.log('All pages generated successfully!');
 }
 

@@ -399,20 +399,56 @@
             other: []
         };
 
-        // Load techniques from YAML files
+        // Load techniques from YAML files dynamically
         async function loadTechniques() {
-            const techniqueFiles = [
-                'techniques/fake-support-call.yaml',
-                'techniques/fake-email-attachment.yaml',
-                'techniques/fake-software-update.yaml',
-                'techniques/fake-antivirus-scan.yaml',
-                'techniques/fake-prize-notification.yaml',
-                'techniques/fake-job-offer.yaml'
-            ];
-
             const techniques = [];
 
             try {
+                // Try to load the index file first
+                let techniqueFiles = [];
+                
+                try {
+                    const indexResponse = await fetch('techniques/index.txt');
+                    if (indexResponse.ok) {
+                        const indexText = await indexResponse.text();
+                        techniqueFiles = indexText.trim().split('\n').map(filename => 
+                            `techniques/${filename.trim()}`
+                        ).filter(filename => filename.endsWith('.yaml'));
+                        console.log(`Loaded ${techniqueFiles.length} files from index.txt`);
+                    }
+                } catch (indexError) {
+                    console.warn('Could not load index.txt:', indexError);
+                }
+                
+                // If we couldn't load the index, use a fallback approach
+                if (techniqueFiles.length === 0) {
+                    console.log('No index file found, using fallback approach');
+                    // Try common YAML files that might exist
+                    const commonFiles = [
+                        'techniques/fake-support-call.yaml',
+                        'techniques/fake-email-attachment.yaml',
+                        'techniques/fake-software-update.yaml',
+                        'techniques/fake-antivirus-scan.yaml',
+                        'techniques/fake-prize-notification.yaml',
+                        'techniques/fake-job-offer.yaml'
+                    ];
+                    
+                    // Test which files exist by trying to fetch them
+                    for (const file of commonFiles) {
+                        try {
+                            const testResponse = await fetch(file, { method: 'HEAD' });
+                            if (testResponse.ok) {
+                                techniqueFiles.push(file);
+                            }
+                        } catch (e) {
+                            // File doesn't exist or can't be accessed
+                        }
+                    }
+                }
+                
+                console.log(`Found ${techniqueFiles.length} YAML files to load`);
+                
+                // Load all found YAML files
                 for (const file of techniqueFiles) {
                     try {
                         const response = await fetch(file, {
