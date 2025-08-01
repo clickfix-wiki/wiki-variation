@@ -1,7 +1,0 @@
-fake-antivirus-scan.yaml
-fake-email-attachment.yaml
-fake-job-offer.yaml
-fake-prize-notification.yaml
-fake-software-update.yaml
-fake-support-call.yaml
-fake-system-alert.yaml

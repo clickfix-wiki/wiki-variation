@@ -30,4 +30,5 @@ Thumbs.db
 # Generated files
 pages/
 *.tmp
-*.temp 
+*.temp
+techniques/index.txt 
