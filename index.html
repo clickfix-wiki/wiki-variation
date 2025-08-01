@@ -399,37 +399,22 @@
             other: []
         };
 
-        // Load techniques from YAML files
+        // Load techniques from JSON file
         async function loadTechniques() {
-            const techniqueFiles = [
-                'techniques/fake-support-call.yaml',
-                'techniques/fake-email-attachment.yaml',
-                'techniques/fake-software-update.yaml',
-                'techniques/fake-antivirus-scan.yaml',
-                'techniques/fake-prize-notification.yaml',
-                'techniques/fake-job-offer.yaml'
-            ];
-
-            const techniques = [];
-
             try {
-                for (const file of techniqueFiles) {
-                    const response = await fetch(file);
-                    if (response.ok) {
-                        const yamlText = await response.text();
-                        const technique = parseYAML(yamlText);
-                        techniques.push(technique);
-                    } else {
-                        console.warn(`Failed to load ${file}`);
-                    }
+                const response = await fetch('data.json');
+                if (response.ok) {
+                    const techniques = await response.json();
+                    return techniques;
+                } else {
+                    console.warn('Failed to load data.json, falling back to hardcoded data');
+                    return getFallbackTechniques();
                 }
             } catch (error) {
                 console.error('Error loading techniques:', error);
-                // Fallback to hardcoded data if YAML loading fails
+                // Fallback to hardcoded data if JSON loading fails
                 return getFallbackTechniques();
             }
-
-            return techniques;
         }
 
         // Fallback techniques if YAML loading fails
@@ -460,7 +445,7 @@
                         'Poor grammar or spelling in emails',
                         'Suspicious sender addresses'
                     ],
-                    severity: 'easy',
+                    severity: 'low',
                     tags: ['Windows', 'Mac', 'Linux', 'GUI', 'CLI', 'Email', 'File Attachment', 'Run Command']
                 }
             ];

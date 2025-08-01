@@ -23,8 +23,10 @@ jobs:
       with:
         node-version: '18'
     
-    - name: Generate HTML pages
-      run: node generate-pages.js
+    - name: Generate HTML pages and data
+      run: |
+        node generate-pages.js
+        node generate-data.js
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
